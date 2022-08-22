@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,25 @@
     <title>Best Five DOM</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+    .underlined {
+        position: relative;
+        margin-right: 1rem;
+    }
+
+    .underlined:after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 65px;
+        height: 7px;
+        width: 50%;
+        border: solid 6px #cb1829;
+        border-color: #cb1829 transparent transparent transparent;
+        border-radius: 100%;
+    }
+</style>
+
 <body class="bg-zinc-800">
     <header class="bg-zinc-900 flex">
         <div class="mt-14">
@@ -14,13 +34,147 @@
         </div>
         <div class="text-center my-auto mx-5">
             <h1 class="font-semibold text-rose-500 text-6xl italic">Choose Your Best Five</h1>
-            <p class="text-white mt-9">Football is a most exciting game ever. All over the world <br>people enjoy it so much. Football is a family of team sports that involve, <br>to varying degrees, kicking a ball to score a goal.</p>
+            <p class="text-white mt-9">Football is a most exciting game ever. All over the world <br>people enjoy it so
+                much. Football is a family of team sports that involve, <br>to varying degrees, kicking a ball to score
+                a goal.</p>
         </div>
         <div>
             <img class="h-40 mt-10 ml-16" src="images/2.jpg" alt="" srcset="">
         </div>
     </header>
 
-    
+    <main class="container mx-auto">
+        <div class="pt-10 pb-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-5">
+            <!--Card 1-->
+            <div class="shadow-lg bg-zinc-900">
+                <img class="h-25" src="images/Messi.jpg">
+                <div class="py-4 text-center">
+                    <h2 class="font-bold text-white text-2xl mb-2 ">Lionel Messi</h2>
+                    <p class=" text-slate-400">36 Goals . 120 Assist
+                    </p>
+                    <div>
+                        <button class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 btn-select"
+                            onclick="select_button(this)">SELECT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card-2 -->
+            <div class="shadow-lg bg-zinc-900">
+                <img class="h-25" src="images/jr.jpg">
+                <div class="py-4 text-center">
+                    <div class="font-bold text-white text-2xl mb-2">Neymar Jr</div>
+                    <p class="text-slate-400">36 Goals . 120 Assist
+                    </p>
+                    <div>
+                        <button class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 btn-select"
+                            onclick="select_button(this)">SELECT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card-3 -->
+            <div class="shadow-lg bg-zinc-900">
+                <img class="w-30" src="images/Ky.jpg">
+                <div class="py-4 text-center">
+                    <div class="font-bold text-white text-2xl mb-2">Kylian Mbappé</div>
+                    <p class="text-slate-400">36 Goals . 120 Assist
+                    </p>
+                    <div>
+                        <button class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 btn-select"
+                            onclick="select_button(this)">SELECT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card-4 (Selected-V) -->
+            <div class="ml-5 shadow-lg w-60 py-4 text-center bg-zinc-900">
+                <h2 class="font-bold text-white text-2xl mb-2 p-4 underlined">Selected-V</h2>
+                <table class="table table-zebra text-center text-white w-full">
+                    <tbody id="display_name">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Col-2 -->
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-5">
+            <!--Card 1-->
+            <div class="shadow-lg bg-zinc-900">
+                <img class="h-25" src="images/Ramos.jpg">
+                <div class="py-4 text-center">
+                    <div class="font-bold text-white text-2xl mb-2">Sergio Ramos</div>
+                    <p class="text-slate-400">36 Goals . 120 Assist
+                    </p>
+                    <div>
+                        <button class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 btn-select"
+                            onclick="select_button(this)">SELECT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card-2 -->
+            <div class="shadow-lg bg-zinc-900">
+                <img class="h-25" src="images/renato.jpg">
+                <div class="py-4 text-center">
+                    <div class="font-bold text-white text-2xl mb-2">Renato Sanches</div>
+                    <p class="text-slate-400">36 Goals . 120 Assist
+                    </p>
+                    <div>
+                        <button class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 btn-select"
+                            onclick="select_button(this)">SELECT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card-3 -->
+            <div class="shadow-lg bg-zinc-900">
+                <img class="w-30" src="images/ron.jpg">
+                <div class="py-4 text-center">
+                    <div class="font-bold text-white text-2xl mb-2">Cristiano Ronaldo</div>
+                    <p class="text-slate-400">36 Goals . 120 Assist
+                    </p>
+                    <div>
+                        <button class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 btn-select"
+                            onclick="select_button(this)">SELECT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card-4 (Budget) -->
+            <div class="ml-5 shadow-lg h-100 w-60 py-4 text-center bg-zinc-900">
+                <h2 class="font-bold text-white text-2xl mb-2 p-4 underlined">Budget</h2>
+                <p class="text-white">Per Person</p>
+                <input id="perPersonBudget" type="text">
+                <div>
+                    <button id="calculateWithPlayer"
+                        class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 ">Calculate</button>
+                </div>
+                <p class="text-white mt-8">Player Expenses:&nbsp; $<span id="expenses">00</span></p>
+
+                <p class="text-white mt-5">Manager</p>
+                <input id="manager_budget" type="text">
+
+                <p class="text-white mt-5">Coach</p>
+                <input id="coach_budget" type="text">
+
+                <div>
+                    <button id="Calculate-total"
+                        class="mx-auto mt-4 text-white px-10 py-1 bg-sky-900 hover:bg-sky-600 ">Calculate Total</button>
+                </div>
+                <p class="text-white mt-5">Total: &nbsp; <b class="text-rose-500">$</b><span id="overall_total"
+                        class="text-rose-500">00</span></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24">
+        <hr>
+        <p class="text-neutral-400 text-center p-10">Copyright @ 2022 All Rights Reserved.</p>
+    </footer>
+    <script src="js/select_five.js"></script>
+    <script src="js/budget.js"></script>
 </body>
+
 </html>
