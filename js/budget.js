@@ -4,7 +4,7 @@ function forPerPerson()
     const perPersonString= persons.value;
     const per_person_budget=parseFloat(perPersonString);
 
-    const totalExpenses= per_person_budget*5;
+    const totalExpenses= per_person_budget*player.length;
     const person_expenses=document.getElementById('expenses');
     person_expenses.innerHTML=totalExpenses;
 }
@@ -24,7 +24,7 @@ document.getElementById('Calculate-total').addEventListener('click',function(){
     const persons=document.getElementById('perPersonBudget');
     const perPersonString= persons.value;
     const per_person_budget=parseFloat(perPersonString);
-    const totalExpenses= per_person_budget*5;
+    const totalExpenses= per_person_budget*player.length;
 
     const total=totalExpenses +manger_budget_int+ coach_budget_int;
 
