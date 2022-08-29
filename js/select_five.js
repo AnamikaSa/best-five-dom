@@ -1,4 +1,5 @@
 const player=[];
+let c=0;
 
 function selectedDisplay(){
     const display= document.getElementById("display_name");
@@ -14,13 +15,17 @@ function selectedDisplay(){
     }
 }
 function select_button(element){
-    element.disabled=true;
+    c++;
+    if(c>5){
+        alert("Can't include more");
+        return;
+    }
+    
     element.style.background='gray';
+    element.disabled=true;
     const playersName=element.parentNode.parentNode.children[0].innerText;
+
     const name={playerName:playersName}
     player.push(name);
-    selectedDisplay();
-    if(player.length > 5){
-        alert("Can't include more");
-    }   
+    selectedDisplay(); 
 }
